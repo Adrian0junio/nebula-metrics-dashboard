@@ -13,7 +13,7 @@ const Sidebar = () => {
     <div className="fixed left-0 top-0 h-full w-64 sidebar-glow backdrop-blur-lg">
       {/* Header */}
       <div className="p-6 border-b border-white/10">
-        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center shadow-lg glow-effect">
+        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-white/20 to-white/10 flex items-center justify-center shadow-lg glow-effect">
           <div className="w-5 h-5 rounded-full bg-white/30 shadow-inner"></div>
         </div>
       </div>
@@ -27,7 +27,7 @@ const Sidebar = () => {
             className={({ isActive }) =>
               `flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-300 group ${
                 isActive
-                  ? 'sidebar-item-active text-green-400'
+                  ? 'sidebar-item-active text-white'
                   : 'text-gray-300 sidebar-item-hover hover:text-white'
               }`
             }

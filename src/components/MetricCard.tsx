@@ -14,7 +14,7 @@ const MetricCard = ({ title, value, subtitle, icon: Icon, trend, trendType = 'ne
   const getTrendColor = () => {
     switch (trendType) {
       case 'positive':
-        return 'text-green-400';
+        return 'text-white';
       case 'negative':
         return 'text-red-400';
       default:
@@ -25,7 +25,7 @@ const MetricCard = ({ title, value, subtitle, icon: Icon, trend, trendType = 'ne
   return (
     <div className="premium-card rounded-xl p-6 card-hover relative overflow-hidden">
       {/* Subtle inner glow */}
-      <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 via-transparent to-blue-500/5 opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-white/5 opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
       
       {/* Header */}
       <div className="flex items-center justify-between mb-6 relative z-10">
@@ -49,7 +49,7 @@ const MetricCard = ({ title, value, subtitle, icon: Icon, trend, trendType = 'ne
       </div>
 
       {/* Bottom accent line */}
-      <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-green-400/50 to-transparent"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
       
       {/* Corner highlight */}
       <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-white/5 to-transparent rounded-bl-2xl"></div>

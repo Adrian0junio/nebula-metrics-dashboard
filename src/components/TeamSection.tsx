@@ -18,8 +18,8 @@ const TeamSection = () => {
           <h3 className="text-lg font-semibold text-white tracking-wide">Membros da equipe</h3>
           <p className="text-sm text-gray-500 mt-1">Convide membros da sua equipe para colaborar</p>
         </div>
-        <button className="p-2.5 bg-gradient-to-br from-green-500/20 to-green-600/20 hover:from-green-500/30 hover:to-green-600/30 rounded-lg border border-green-500/30 transition-all duration-300 hover:scale-105 hover:shadow-lg glow-effect">
-          <Plus className="w-4 h-4 text-green-400" />
+        <button className="p-2.5 bg-gradient-to-br from-white/20 to-white/10 hover:from-white/30 hover:to-white/20 rounded-lg border border-white/30 transition-all duration-300 hover:scale-105 hover:shadow-lg glow-effect">
+          <Plus className="w-4 h-4 text-white" />
         </button>
       </div>
 
@@ -36,10 +36,10 @@ const TeamSection = () => {
       </div>
 
       {/* Subtle corner glow */}
-      <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-green-500/8 via-blue-500/4 to-transparent rounded-bl-3xl"></div>
+      <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-white/8 via-white/4 to-transparent rounded-bl-3xl"></div>
       
       {/* Bottom accent */}
-      <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-green-400/30 to-transparent"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
     </div>
   );
 };
