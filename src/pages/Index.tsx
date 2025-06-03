@@ -7,11 +7,12 @@ import SubscriptionSection from '../components/SubscriptionSection';
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gray-950 relative overflow-hidden">
-      {/* Background effects */}
+    <div className="min-h-screen relative overflow-hidden" style={{ backgroundColor: '#0d0d0d' }}>
+      {/* Enhanced background effects */}
       <div className="absolute inset-0">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-green-500/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-green-500/3 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500/3 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-green-400/2 rounded-full blur-2xl"></div>
       </div>
 
       <Sidebar />
@@ -19,9 +20,9 @@ const Index = () => {
       {/* Main Content */}
       <div className="ml-64 relative z-10">
         {/* Header */}
-        <header className="border-b border-gray-800/50 bg-gray-950/80 backdrop-blur-sm">
+        <header className="border-b border-white/10 backdrop-blur-sm" style={{ backgroundColor: 'rgba(13, 13, 13, 0.9)' }}>
           <div className="px-8 py-6">
-            <h1 className="text-3xl font-bold text-white">Dashboard</h1>
+            <h1 className="text-3xl font-bold text-white tracking-tight">Dashboard</h1>
           </div>
         </header>
 

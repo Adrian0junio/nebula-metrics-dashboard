@@ -3,23 +3,26 @@ import { ChevronRight } from 'lucide-react';
 
 const SubscriptionSection = () => {
   return (
-    <div className="bg-gray-900/50 backdrop-blur-sm rounded-xl p-6 border border-gray-800/50 relative overflow-hidden">
+    <div className="premium-card rounded-xl p-6 relative overflow-hidden">
       {/* Header */}
-      <div className="flex items-center justify-between mb-6">
-        <h3 className="text-lg font-semibold text-white">Assinaturas ativas</h3>
-        <button className="flex items-center gap-1 text-sm text-gray-400 hover:text-green-400 transition-colors">
+      <div className="flex items-center justify-between mb-6 relative z-10">
+        <h3 className="text-lg font-semibold text-white tracking-wide">Assinaturas ativas</h3>
+        <button className="flex items-center gap-1 text-sm text-gray-400 hover:text-green-400 transition-all duration-300 hover:scale-105">
           Ver todas
           <ChevronRight className="w-4 h-4" />
         </button>
       </div>
 
       {/* Content */}
-      <div className="text-center py-8">
-        <p className="text-gray-500">Nenhuma assinatura ativa</p>
+      <div className="text-center py-8 relative z-10">
+        <p className="text-gray-500 font-medium">Nenhuma assinatura ativa</p>
       </div>
 
-      {/* Glow effect */}
-      <div className="absolute inset-0 bg-gradient-to-r from-green-500/5 to-transparent opacity-50"></div>
+      {/* Subtle glow effect */}
+      <div className="absolute inset-0 bg-gradient-to-br from-green-500/3 via-transparent to-blue-500/3"></div>
+      
+      {/* Corner highlight */}
+      <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-white/3 to-transparent rounded-bl-3xl"></div>
     </div>
   );
 };

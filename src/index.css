@@ -51,21 +51,30 @@
   }
 
   body {
-    @apply bg-gray-950 text-gray-100;
+    background-color: #0d0d0d;
+    color: #f2f2f2;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   }
 }
 
 @layer components {
   .glow-effect {
-    box-shadow: 0 0 20px rgba(34, 197, 94, 0.3);
+    box-shadow: 0 0 30px rgba(0, 255, 136, 0.3), 0 0 60px rgba(0, 255, 136, 0.1);
   }
   
   .border-glow {
-    border: 1px solid rgba(34, 197, 94, 0.5);
+    border: 1px solid rgba(0, 255, 136, 0.5);
     box-shadow: 
-      0 0 10px rgba(34, 197, 94, 0.2),
+      0 0 15px rgba(0, 255, 136, 0.2),
       inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+  
+  .sidebar-glow {
+    background: linear-gradient(135deg, #2a2a2a 0%, #1f1f1f 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 
+      0 0 20px rgba(255, 255, 255, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
   }
   
   .card-hover {
@@ -75,7 +84,28 @@
   .card-hover:hover {
     transform: translateY(-2px);
     box-shadow: 
-      0 10px 30px rgba(0, 0, 0, 0.5),
-      0 0 20px rgba(34, 197, 94, 0.2);
+      0 10px 40px rgba(0, 0, 0, 0.8),
+      0 0 25px rgba(0, 255, 136, 0.2);
+  }
+
+  .premium-card {
+    background: linear-gradient(145deg, #1a1a1a 0%, #161616 100%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 
+      0 8px 25px rgba(0, 0, 0, 0.6),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+
+  .sidebar-item-active {
+    background: linear-gradient(135deg, rgba(0, 255, 136, 0.2) 0%, rgba(0, 204, 102, 0.1) 100%);
+    border: 1px solid rgba(0, 255, 136, 0.3);
+    box-shadow: 
+      0 0 15px rgba(0, 255, 136, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+
+  .sidebar-item-hover:hover {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
   }
 }
