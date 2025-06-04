@@ -1,5 +1,5 @@
 
-import { ArrowRight, Brain, Mail, Shield, Zap } from 'lucide-react';
+import { ArrowRight, Brain, Mail, Shield, Zap, MessageCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Landing = () => {
@@ -23,6 +23,37 @@ const Landing = () => {
       icon: Shield,
       title: 'Seguro & Privado',
       description: 'Seus dados são protegidos com criptografia de ponta'
+    }
+  ];
+
+  const plans = [
+    {
+      name: 'Essencial',
+      price: 'R$20',
+      period: '/mês',
+      subtitle: '20 E-mails Resumidos no dia',
+      description: 'Ideal para quem está começando',
+      buttonText: 'Subscribe',
+      highlighted: false
+    },
+    {
+      name: 'Profissional',
+      price: 'R$49',
+      period: '/mês',
+      subtitle: '50 E-mails Resumidos no dia',
+      description: 'Ideal para criadores de conteúdo em crescimento',
+      buttonText: 'Subscribe',
+      highlighted: true
+    },
+    {
+      name: 'Personalizado',
+      price: 'Entre em contato',
+      period: '',
+      subtitle: 'Soluções adaptadas ao seu volume de conteúdo',
+      description: 'Atendimento especializado',
+      buttonText: 'Fale com a gente',
+      highlighted: false,
+      isCustom: true
     }
   ];
 
@@ -103,6 +134,76 @@ const Landing = () => {
                 </div>
                 <h3 className="text-lg font-semibold mb-2">{feature.title}</h3>
                 <p className="text-gray-400 text-sm">{feature.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing Section */}
+      <section className="py-20 border-t border-white/10" style={{ backgroundColor: '#0d0d0d' }}>
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4 text-white">
+              Escolha seu plano
+            </h2>
+            <p className="text-gray-400 text-lg mb-8">
+              Comece gratuitamente e faça upgrade quando precisar
+            </p>
+            
+            {/* Billing Toggle */}
+            <div className="inline-flex bg-gray-800 rounded-lg p-1 mb-12">
+              <button className="px-6 py-2 rounded-md bg-gray-600 text-white font-medium transition-all duration-300">
+                Cobrança mensal
+              </button>
+              <button className="px-6 py-2 rounded-md text-gray-400 hover:text-white font-medium transition-all duration-300">
+                Cobrança anual
+              </button>
+            </div>
+          </div>
+
+          {/* Plans Grid */}
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {plans.map((plan, index) => (
+              <div 
+                key={index} 
+                className={`relative rounded-xl p-8 text-center transition-all duration-300 hover:scale-105 ${
+                  plan.highlighted 
+                    ? 'border-2 border-pink-300 bg-gray-900' 
+                    : 'border border-gray-700 bg-gray-900'
+                }`}
+                style={{ backgroundColor: '#1a1a1a' }}
+              >
+                {plan.highlighted && (
+                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                    <span className="bg-pink-300 text-black px-4 py-1 rounded-full text-sm font-medium">
+                      Mais Popular
+                    </span>
+                  </div>
+                )}
+                
+                <h3 className="text-xl font-bold text-white mb-4">{plan.name}</h3>
+                
+                <div className="mb-6">
+                  <div className="flex items-baseline justify-center">
+                    <span className="text-4xl font-bold text-white">{plan.price}</span>
+                    {plan.period && <span className="text-gray-400 ml-1">{plan.period}</span>}
+                  </div>
+                  <p className="text-gray-400 text-sm mt-2">{plan.subtitle}</p>
+                </div>
+                
+                <p className="text-gray-300 text-sm mb-8">{plan.description}</p>
+                
+                <button 
+                  className={`w-full py-3 rounded-lg font-medium transition-all duration-300 flex items-center justify-center gap-2 ${
+                    plan.highlighted
+                      ? 'bg-pink-300 text-black hover:bg-pink-200'
+                      : 'bg-gray-600 text-white hover:bg-gray-500'
+                  }`}
+                >
+                  {plan.isCustom && <MessageCircle className="w-4 h-4" />}
+                  {plan.buttonText}
+                </button>
               </div>
             ))}
           </div>
