@@ -1,8 +1,10 @@
-
 import { ArrowRight, Brain, Mail, Shield, Zap, MessageCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 const Landing = () => {
+  const [isYearly, setIsYearly] = useState(false);
+
   const features = [
     {
       icon: Brain,
@@ -29,7 +31,7 @@ const Landing = () => {
   const plans = [
     {
       name: 'Essencial',
-      price: 'R$20',
+      price: isYearly ? 'R$19' : 'R$20',
       period: '/mês',
       subtitle: '20 E-mails Resumidos no dia',
       description: 'Ideal para quem está começando',
@@ -38,7 +40,7 @@ const Landing = () => {
     },
     {
       name: 'Profissional',
-      price: 'R$49',
+      price: isYearly ? 'R$39' : 'R$49',
       period: '/mês',
       subtitle: '50 E-mails Resumidos no dia',
       description: 'Ideal para criadores de conteúdo em crescimento',
@@ -153,10 +155,24 @@ const Landing = () => {
             
             {/* Billing Toggle */}
             <div className="inline-flex bg-gray-800 rounded-lg p-1 mb-12">
-              <button className="px-6 py-2 rounded-md bg-gray-600 text-white font-medium transition-all duration-300">
+              <button 
+                onClick={() => setIsYearly(false)}
+                className={`px-6 py-2 rounded-md font-medium transition-all duration-300 ${
+                  !isYearly 
+                    ? 'bg-gray-600 text-white' 
+                    : 'text-gray-400 hover:text-white'
+                }`}
+              >
                 Cobrança mensal
               </button>
-              <button className="px-6 py-2 rounded-md text-gray-400 hover:text-white font-medium transition-all duration-300">
+              <button 
+                onClick={() => setIsYearly(true)}
+                className={`px-6 py-2 rounded-md font-medium transition-all duration-300 ${
+                  isYearly 
+                    ? 'bg-gray-600 text-white' 
+                    : 'text-gray-400 hover:text-white'
+                }`}
+              >
                 Cobrança anual
               </button>
             </div>
@@ -169,14 +185,14 @@ const Landing = () => {
                 key={index} 
                 className={`relative rounded-xl p-8 text-center transition-all duration-300 hover:scale-105 ${
                   plan.highlighted 
-                    ? 'border-2 border-pink-300 bg-gray-900' 
+                    ? 'border-2 border-blue-600 bg-gray-900' 
                     : 'border border-gray-700 bg-gray-900'
                 }`}
                 style={{ backgroundColor: '#1a1a1a' }}
               >
                 {plan.highlighted && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <span className="bg-pink-300 text-black px-4 py-1 rounded-full text-sm font-medium">
+                    <span className="bg-blue-600 text-white px-4 py-1 rounded-full text-sm font-medium">
                       Mais Popular
                     </span>
                   </div>
@@ -197,7 +213,7 @@ const Landing = () => {
                 <button 
                   className={`w-full py-3 rounded-lg font-medium transition-all duration-300 flex items-center justify-center gap-2 ${
                     plan.highlighted
-                      ? 'bg-pink-300 text-black hover:bg-pink-200'
+                      ? 'bg-blue-600 text-white hover:bg-blue-500'
                       : 'bg-gray-600 text-white hover:bg-gray-500'
                   }`}
                 >
